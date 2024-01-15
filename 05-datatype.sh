@@ -10,4 +10,4 @@ read NUMBER2
 
 SUM=$(($NUMBER1+$NUMBER2))
 
-echo "Answer is $SUM:"
+echo "Answer is :$SUM"
