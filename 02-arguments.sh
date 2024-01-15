@@ -6,4 +6,4 @@ PERSON2=$2
 echo "hi $1"
 echo "hi $2"
 echo "how are $1"
-echo "how are $2"
+echo "iam good how are $2"
