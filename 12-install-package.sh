@@ -5,10 +5,10 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 LOG_FILES="/tmp/$0-$TIMESTAMP.log"
 
 
-R="/[e31"
-G="/[e32"
-Y="/[e33"
-N="/[e0"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -25,7 +25,7 @@ then
     echo -e "$R ERROR:: Run this script with root user $N"
     exit 1
 else
-    echo -e "$G You are a root user $n"
+    echo -e "$G You are a root user $N"
 fi
 
 for package in $@
