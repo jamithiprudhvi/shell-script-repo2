@@ -2,7 +2,7 @@
 
 ID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
-LOG_FILES="/tmp/$0-$TIMESTAMP.log"
+LOGFILES="/tmp/$0-$TIMESTAMP.log"
 
 
 R="\e[31m"
@@ -30,11 +30,11 @@ fi
 
 for package in $@
 do
-    yum list installed $package &>> $LOG_FILES
+    yum list installed $package &>> $LOGFILES
     if [ $? -ne 0 ]
     then
-        yum install $package -y
-        VALIDATE $? "Installing $package" &>> $LOG_FILES
+        yum install $package -y &>> $LOGFILES
+        VALIDATE $? "Installing $package" 
     else
         echo -e "$package is already installed .... $Y SKIPPING $N"
     fi 
