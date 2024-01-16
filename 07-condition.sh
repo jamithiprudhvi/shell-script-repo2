@@ -1,5 +1,7 @@
 #!/bin/bash
 
+NUMBER=$1
+
 echo "Enter the number"
 
 read $NUMBER
