@@ -3,14 +3,19 @@
 ID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOG_FILES="/tmp/$0-$TIMESTAMP.log"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
 
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 ...FAILED"
+        echo "$2 ...$R FAILED $N"
         exit 1
     else
-        echo "$2 ....SUCCESS"
+        echo "$2 .... $G SUCCESS $N"
     fi
 }
 
